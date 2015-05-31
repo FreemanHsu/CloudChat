@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150531084053) do
+ActiveRecord::Schema.define(version: 20150531113504) do
 
   create_table "chatrooms", force: true do |t|
     t.string   "roomname"
@@ -52,12 +52,13 @@ ActiveRecord::Schema.define(version: 20150531084053) do
     t.string   "email"
     t.string   "nickname"
     t.boolean  "gender"
-    t.string   "password"
+    t.string   "password_digest"
     t.string   "description"
     t.string   "avatar"
     t.boolean  "status"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "auth_token"
   end
 
 end
