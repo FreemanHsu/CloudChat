@@ -11,7 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150531073658) do
+ActiveRecord::Schema.define(version: 20150531084053) do
+
+  create_table "chatrooms", force: true do |t|
+    t.string   "roomname"
+    t.string   "roomcover"
+    t.boolean  "privacy"
+    t.integer  "popularity"
+    t.integer  "memnum"
+    t.integer  "roomno"
+    t.integer  "key"
+    t.integer  "creatorid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roommems", force: true do |t|
+    t.integer  "roomid"
+    t.integer  "memid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roomtags", force: true do |t|
+    t.integer  "chatroomid"
+    t.integer  "tagid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tags", force: true do |t|
+    t.string   "tagname"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "username"

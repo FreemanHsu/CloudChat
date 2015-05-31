@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  roomname: MyString
+  roomcover: MyString
+  privacy: false
+  popularity: 1
+  memnum: 1
+  roomno: 1
+  key: 1
+  creatorid: 1
+
+two:
+  roomname: MyString
+  roomcover: MyString
+  privacy: false
+  popularity: 1
+  memnum: 1
+  roomno: 1
+  key: 1
+  creatorid: 1
