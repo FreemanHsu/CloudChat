@@ -3,7 +3,7 @@
 one:
   roomname: MyString
   roomcover: MyString
-  privacy: false
+  privacy: 
   popularity: 1
   memnum: 1
   roomno: 1
@@ -13,7 +13,7 @@ one:
 two:
   roomname: MyString
   roomcover: MyString
-  privacy: false
+  privacy: 
   popularity: 1
   memnum: 1
   roomno: 1
