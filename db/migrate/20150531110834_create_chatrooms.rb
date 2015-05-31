@@ -4,7 +4,7 @@ class CreateChatrooms < ActiveRecord::Migration
       t.string :roomname
       t.string :roomcover
       t.boolean :privacy
-      t.integer :popularity
+      t.integer :popularity, default: 1
       t.integer :memnum
       t.integer :roomno
       t.integer :key

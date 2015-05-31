@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+<h1> 到时聚聚，聊聊程序</h1>
+
+<div class="head">
+  <p id="roomname">
+    <strong>当前聊天室:</strong>
+    <%= @chatroom.roomname %>
+    
+    <strong>聊天室编号:</strong>
+    <%= @chatroom.roomno %>
+  </p>
+  <p id="describe">
+    <%= (@chatroom.description) %>
+  </p>
+
+  <div id="img">
+    <%= image_tag(@chatroom.roomcover) %>
+  </div>
+
+</div>
+
+<div class="second">
+  <p>
+  
+
+    <strong>创建人:</strong>
+    <%= @chatroom.creatorid %>
+    <%=  @chatroom.privacy %>
+
+  </p>
+  <p>
+    <strong>热度:</strong>
+    <%= @chatroom.popularity %>
+    <strong>人数:</strong>
+    <%= @chatroom.memnum %>
+
+  </p>
+</div>
+
+<%= link_to 'Edit', edit_chatroom_path(@chatroom) %> |
+<%= link_to 'Back', chatrooms_path %>
