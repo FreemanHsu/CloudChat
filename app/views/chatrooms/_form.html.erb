@@ -1,0 +1,36 @@
+<%= form_for(@chatroom) do |f| %>
+  <% if @chatroom.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@chatroom.errors.count, "error") %> prohibited this chatroom from being saved:</h2>
+
+      <ul>
+      <% @chatroom.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :roomname %><br>
+    <%= f.text_field :roomname %>
+  </div>
+  <div class="field">
+    <%= f.label :roomcover %><br>
+    <%= f.text_field :roomcover %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, rows: 6 %>
+  </div>
+  <div class="field">
+    <%= f.label :privacy %><br>
+    <%= f.text_field :privacy %>
+  </div>
+  <div class="field">
+    <%= f.label :key %><br>
+    <%= f.number_field :key %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

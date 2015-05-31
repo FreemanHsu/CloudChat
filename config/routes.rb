@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   delete "logout" => "users#logout", :as => "logout"
   resources :users, only: [:create]
   
+  resources :chatrooms
+
   root 'homepage#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
