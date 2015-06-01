@@ -1,1 +1,19 @@
-<h1>This is the homepage</h1>
+<div class="home-banner" data-stretch="<%= image_url "clouds.jpeg" %>">
+	<nav class="site-nav">
+		
+	</nav>
+	<div class="banner-inner">
+		<% if current_user %>
+		<li><%= link_to current_user.username, "#" %></li>
+		<li><%= link_to "logout", logout_path, method: "delete" %></li>
+		<% else %>
+		<li><%= link_to "login", login_path %></li>
+		<li><%= link_to "signup", signup_path %></li>
+	<% end %>
+	</div>
+</div>
+
+
+<script>
+  	$('.home-banner').anystretch();
+</script>
