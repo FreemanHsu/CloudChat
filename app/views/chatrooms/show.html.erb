@@ -24,8 +24,13 @@
   
 
     <strong>创建人:</strong>
-    <%= @chatroom.creatorid %>
-    <%=  @chatroom.privacy %>
+
+    <% if @creater != nil %>
+    <%=  @creater.username %>
+    <% else  %>
+    Administrator
+    <% end  %>
+    <%= @chatroom.privacy %>
 
   </p>
   <p>
