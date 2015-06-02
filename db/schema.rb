@@ -11,14 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20150531113504) do
 
   create_table "chatrooms", force: true do |t|
     t.string   "roomname"
     t.string   "roomcover"
     t.boolean  "privacy"
-    t.integer  "popularity"
+    t.integer  "popularity",  default: 1
     t.integer  "memnum"
     t.integer  "roomno"
     t.integer  "key"
