@@ -17,7 +17,7 @@
   <tbody>
     <% @chatrooms.each do |chatroom| %>
       <tr>
-        <td><%= chatroom.roomcover %></td>
+        <td><%= image_tag(chatroom.roomcover) %></td>
         <td><%= chatroom.roomname %></td>
         <td><%= chatroom.privacy %></td>
         <td><%= chatroom.popularity %></td>
@@ -25,9 +25,9 @@
         <td><%= chatroom.roomno %></td>
         <td><%= chatroom.key %></td>
         <td><%= chatroom.creatorid %></td>
-        <td><%= link_to 'Show', chatroom %></td>
-        <td><%= link_to 'Edit', edit_chatroom_path(chatroom) %></td>
-        <td><%= link_to 'Destroy', chatroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '查看', chatroom %></td>
+        <td><%= link_to '编辑', edit_chatroom_path(chatroom) %></td>
+        <td><%= link_to '删除', chatroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
       <tr>
           <td><%= sanitize(chatroom.description) %></td> 
@@ -37,5 +37,6 @@
 </table>
 
 <br>
-
-<%= link_to 'New Chatroom', new_chatroom_path %>
+<% if current_user %>
+  <%= link_to '新建聊天室', new_chatroom_path %>
+<% end %>

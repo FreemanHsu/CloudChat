@@ -66,7 +66,6 @@ class ChatroomsController < ApplicationController
     def set_chatroom
       @chatroom = Chatroom.find(params[:id])
     end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def chatroom_params
       params.require(:chatroom).permit(:roomname, :roomcover, :privacy, :popularity, :memnum, :roomno, :key, :creatorid, :description)

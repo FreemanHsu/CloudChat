@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20150531113504) do
     t.string   "roomname"
     t.string   "roomcover"
     t.boolean  "privacy"
-    t.integer  "popularity",  default: 1
+    t.integer  "popularity"
     t.integer  "memnum"
     t.integer  "roomno"
     t.integer  "key"
