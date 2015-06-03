@@ -24,23 +24,21 @@
   
 
     <strong>创建人:</strong>
-
-    <% if @creater != nil %>
     <%=  @creater.username %>
-    <% else  %>
-    Administrator
-    <% end  %>
+
     <%= @chatroom.privacy %>
 
   </p>
   <p>
     <strong>热度:</strong>
     <%= @chatroom.popularity %>
+  </p>
+  <p>
     <strong>人数:</strong>
     <%= @chatroom.memnum %>
-
+    
   </p>
 </div>
-
-<%= link_to 'Edit', edit_chatroom_path(@chatroom) %> |
-<%= link_to 'Back', :root %>
+<%= link_to '查看成员列表', room_mem_path %> |
+<%= link_to '编辑', edit_chatroom_path(@chatroom) %> |
+<%= link_to '返回主页', :root %>

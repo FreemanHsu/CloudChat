@@ -11,25 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150531113504) do
+ActiveRecord::Schema.define(version: 20150603052523) do
 
   create_table "chatrooms", force: true do |t|
     t.string   "roomname"
-    t.string   "roomcover"
+    t.string   "roomcover",   default: "app/assets/images/ruby.jpg"
     t.boolean  "privacy"
-    t.integer  "popularity"
-    t.integer  "memnum"
+    t.integer  "popularity",  default: 1
+    t.integer  "memnum",      default: 1
     t.integer  "roomno"
     t.integer  "key"
-    t.integer  "creatorid"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "description"
   end
 
-  create_table "roommems", force: true do |t|
-    t.integer  "roomid"
-    t.integer  "memid"
+  create_table "room_mems", force: true do |t|
+    t.integer  "chatroom_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
