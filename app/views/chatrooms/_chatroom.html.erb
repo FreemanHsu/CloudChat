@@ -23,8 +23,8 @@
         <td><%= chatroom.popularity %></td>
         <td><%= chatroom.memnum %></td>
         <td><%= chatroom.roomno %></td>
-        <% if @creater != nil %>
-        <td class="name"><%= @creater.username %></td>
+        <% if chatroom.creatorid != nil %>
+        <td class="name"><%= chatroom.user %></td>
         <% else %>
         <td class="name">Administrator</td>
         <% end %>

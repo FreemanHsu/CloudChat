@@ -1,5 +1,5 @@
 class Chatroom < ActiveRecord::Base
-	
+	belongs_to :user, :class_name => 'User', :foreign_key => :user_id
 	before_create { generate_room_no(:roomno) }
 
 	def generate_room_no(column)

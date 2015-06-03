@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	has_many :chatroom, :foreign_key => :chatroom_id
 	has_secure_password
 	
 	before_create { generate_token(:auth_token) }
