@@ -11,7 +11,7 @@ class ChatroomsController < ApplicationController
   # GET /chatrooms/1.json
   def show
     @chatroom = Chatroom.find_by_id(params[:id])
-    @creater = User.find_by_id(@chatroom.creatorid)
+    @creater = User.find( @chatroom.user_id )
   end
 
   # GET /chatrooms/new
@@ -29,10 +29,15 @@ class ChatroomsController < ApplicationController
     @chatroom = Chatroom.new(chatroom_params)
 
     @current_user ||= User.find_by_auth_token!(cookies[:auth_token]) if cookies[:auth_token]
-    @chatroom.creatorid = @current_user.id 
+    @chatroom.user_id = @current_user.id 
 
     respond_to do |format|
       if @chatroom.save
+        room_mem = RoomMem.new
+        room_mem.user_id = @current_user.id 
+        room_mem.chatroom_id = @chatroom.id
+        room_mem.save
+
         format.html { redirect_to @chatroom, notice: 'Chatroom was successfully created.' }
         format.json { render :show, status: :created, location: @chatroom }
       else
@@ -40,7 +45,10 @@ class ChatroomsController < ApplicationController
         format.json { render json: @chatroom.errors, status: :unprocessable_entity }
       end
     end
-  end
+end
+
+
+
 
   # PATCH/PUT /chatrooms/1
   # PATCH/PUT /chatrooms/1.json

@@ -10,6 +10,7 @@
       <th>人数</th>
       <th>房间号</th>
       <th class="name">创建人</th>
+      <th class="name">创建时间</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,11 +24,8 @@
         <td><%= chatroom.popularity %></td>
         <td><%= chatroom.memnum %></td>
         <td><%= chatroom.roomno %></td>
-        <% if chatroom.creatorid != nil %>
-        <td class="name"><%= chatroom.user %></td>
-        <% else %>
-        <td class="name">Administrator</td>
-        <% end %>
+        <td class="name"><%= chatroom.user_id %></td>
+        <td class="name"><%= chatroom.created_at %></td>
         <td><%= link_to '查看', chatroom %></td>
         <td><%= link_to '编辑', edit_chatroom_path(chatroom) %></td>
         <td><%= link_to '删除', chatroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>

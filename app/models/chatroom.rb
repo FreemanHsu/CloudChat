@@ -1,5 +1,6 @@
 class Chatroom < ActiveRecord::Base
-	belongs_to :user, :class_name => 'User', :foreign_key => :user_id
+	has_many :users, :through => :room_mems
+	has_many :room_mems
 	before_create { generate_room_no(:roomno) }
 
 	def generate_room_no(column)
@@ -9,8 +10,8 @@ class Chatroom < ActiveRecord::Base
 	end
 
 
-	validates :roomname, :privacy, presence: true
-	validates :roomcover, allow_blank: true, format: {
+	validates :roomname, presence: true
+	validates :roomcover,  allow_blank: true, format: {
 		with: %r{\.(gif|jpg|png)\Z}i,
 		message: 'must be a URL for GIF, JPG or PNG image.'
 	}

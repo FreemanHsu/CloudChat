@@ -18,7 +18,7 @@ class ChatroomsControllerTest < ActionController::TestCase
 
   test "should create chatroom" do
     assert_difference('Chatroom.count') do
-      post :create, chatroom: { creatorid: @chatroom.creatorid, key: @chatroom.key, memnum: @chatroom.memnum, popularity: @chatroom.popularity, privacy: @chatroom.privacy, roomcover: @chatroom.roomcover, roomname: @chatroom.roomname, roomno: @chatroom.roomno }
+      post :create, chatroom: { user_id: @chatroom.user_id, key: @chatroom.key, memnum: @chatroom.memnum, popularity: @chatroom.popularity, privacy: @chatroom.privacy, roomcover: @chatroom.roomcover, roomname: @chatroom.roomname, roomno: @chatroom.roomno }
     end
 
     assert_redirected_to chatroom_path(assigns(:chatroom))
@@ -35,7 +35,7 @@ class ChatroomsControllerTest < ActionController::TestCase
   end
 
   test "should update chatroom" do
-    patch :update, id: @chatroom, chatroom: { creatorid: @chatroom.creatorid, key: @chatroom.key, memnum: @chatroom.memnum, popularity: @chatroom.popularity, privacy: @chatroom.privacy, roomcover: @chatroom.roomcover, roomname: @chatroom.roomname, roomno: @chatroom.roomno }
+    patch :update, id: @chatroom, chatroom: { user_id: @chatroom.user_id, key: @chatroom.key, memnum: @chatroom.memnum, popularity: @chatroom.popularity, privacy: @chatroom.privacy, roomcover: @chatroom.roomcover, roomname: @chatroom.roomname, roomno: @chatroom.roomno }
     assert_redirected_to chatroom_path(assigns(:chatroom))
   end
 
