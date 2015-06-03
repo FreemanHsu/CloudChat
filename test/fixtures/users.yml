@@ -6,7 +6,7 @@ one:
   email: MyString
   nickname: MyString
   gender: false
-  password: MyString
+  password_digest: MyString
   description: MyString
   avatar: MyString
   status: false
@@ -17,7 +17,7 @@ two:
   email: MyString
   nickname: MyString
   gender: false
-  password: MyString
+  password_digest: MyString
   description: MyString
   avatar: MyString
   status: false
