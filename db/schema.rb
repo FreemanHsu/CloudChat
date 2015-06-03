@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20150603052523) do
 
   create_table "chatrooms", force: true do |t|
     t.string   "roomname"
-    t.string   "roomcover",   default: "app/assets/images/ruby.jpg"
+    t.string   "roomcover",   default: "assets/images/ruby.jpg"
     t.boolean  "privacy"
     t.integer  "popularity",  default: 1
     t.integer  "memnum",      default: 1
