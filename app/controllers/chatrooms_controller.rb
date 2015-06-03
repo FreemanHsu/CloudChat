@@ -10,6 +10,8 @@ class ChatroomsController < ApplicationController
   # GET /chatrooms/1
   # GET /chatrooms/1.json
   def show
+    @chatroom = Chatroom.find_by_id(params[:id])
+    @creater = User.find( @chatroom.user_id )
   end
 
   # GET /chatrooms/new
@@ -26,8 +28,16 @@ class ChatroomsController < ApplicationController
   def create
     @chatroom = Chatroom.new(chatroom_params)
 
+    @current_user ||= User.find_by_auth_token!(cookies[:auth_token]) if cookies[:auth_token]
+    @chatroom.user_id = @current_user.id 
+
     respond_to do |format|
       if @chatroom.save
+        room_mem = RoomMem.new
+        room_mem.user_id = @current_user.id 
+        room_mem.chatroom_id = @chatroom.id
+        room_mem.save
+
         format.html { redirect_to @chatroom, notice: 'Chatroom was successfully created.' }
         format.json { render :show, status: :created, location: @chatroom }
       else
@@ -35,7 +45,10 @@ class ChatroomsController < ApplicationController
         format.json { render json: @chatroom.errors, status: :unprocessable_entity }
       end
     end
-  end
+end
+
+
+
 
   # PATCH/PUT /chatrooms/1
   # PATCH/PUT /chatrooms/1.json
@@ -56,7 +69,7 @@ class ChatroomsController < ApplicationController
   def destroy
     @chatroom.destroy
     respond_to do |format|
-      format.html { redirect_to chatrooms_url, notice: 'Chatroom was successfully destroyed.' }
+      format.html { redirect_to :root, notice: 'Chatroom was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -66,9 +79,8 @@ class ChatroomsController < ApplicationController
     def set_chatroom
       @chatroom = Chatroom.find(params[:id])
     end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def chatroom_params
-      params.require(:chatroom).permit(:roomname, :roomcover, :privacy, :popularity, :memnum, :roomno, :key, :creatorid, :description)
+      params.require(:chatroom).permit(:roomname, :roomcover, :privacy, :popularity, :memnum, :roomno, :key, :user_id, :description)
     end
 end

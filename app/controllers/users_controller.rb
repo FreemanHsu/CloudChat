@@ -7,6 +7,14 @@ class UsersController < ApplicationController
 		
 	end
 
+	def show
+		if User.exists?(params[:id])
+			@user = User.find(params[:id])
+		else
+			redirect_to :root
+		end
+	end
+
 	def logout
 		cookies.delete(:auth_token)
 		redirect_to :root

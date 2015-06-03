@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class RoommemTest < ActiveSupport::TestCase
+class RoomTagTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

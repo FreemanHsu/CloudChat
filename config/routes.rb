@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
 
+  resources :chatrooms
+  resources :users, only: [:create]
+  resources :room_mems
+
   get "signup" => "users#signup", :as => "signup"
   get "login" => "users#login", :as => "login"
   post "create_login_session" => "users#create_login_session"
   delete "logout" => "users#logout", :as => "logout"
-  resources :users, only: [:create]
-  
-  resources :chatrooms
+
+  get "users/:id" => "users#show", :as => "showuser"
+  get "chatrooms/:id/enter" => "room_mems#enter", :as => "enterroom"
 
   root 'homepage#index'
   # The priority is based upon order of creation: first created -> highest priority.

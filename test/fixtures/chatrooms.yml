@@ -8,7 +8,7 @@ one:
   memnum: 1
   roomno: 1
   key: 1
-  creatorid: 1
+  user_id: 1
 
 two:
   roomname: MyString
@@ -18,4 +18,4 @@ two:
   memnum: 1
   roomno: 1
   key: 1
-  creatorid: 1
+  user_id: 1
