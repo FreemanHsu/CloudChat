@@ -24,8 +24,13 @@
   
 
     <strong>创建人:</strong>
-    <%= @chatroom.creatorid %>
-    <%=  @chatroom.privacy %>
+
+    <% if @creater != nil %>
+    <%=  @creater.username %>
+    <% else  %>
+    Administrator
+    <% end  %>
+    <%= @chatroom.privacy %>
 
   </p>
   <p>
@@ -38,4 +43,4 @@
 </div>
 
 <%= link_to 'Edit', edit_chatroom_path(@chatroom) %> |
-<%= link_to 'Back', chatrooms_path %>
+<%= link_to 'Back', :root %>
