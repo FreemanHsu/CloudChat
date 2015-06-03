@@ -11,23 +11,23 @@
     </div>
   <% end %>
   <div class="field">
-    <%= f.label :roomname %><br>
+    <%= f.label "名称" %><br>
     <%= f.text_field :roomname %>
   </div>
   <div class="field">
-    <%= f.label :roomcover %><br>
+    <%= f.label "封面url" %><br>
     <%= f.text_field :roomcover %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
+    <%= f.label "描述" %><br>
     <%= f.text_area :description, rows: 6 %>
   </div>
   <div class="field">
-    <%= f.label :privacy %><br>
+    <%= f.label "是否公开" %><br>
     <%= f.text_field :privacy %>
   </div>
   <div class="field">
-    <%= f.label :key %><br>
+    <%= f.label "密码" %><br>
     <%= f.number_field :key %>
   </div>
   <div class="actions">

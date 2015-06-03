@@ -22,7 +22,7 @@
         <td><%= item.user.phone %></td>
         <td><%= item.user.status %></td>
         <td><%= item.user.updated_at %></td>
-        <td><%= link_to 'Show', "www.baidu.com" %></td>
+        <td><%= link_to '用户主页', showuser_path(item.user.id) %></td>
       </tr>
     <% end %>
   </tbody>

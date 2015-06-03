@@ -1,6 +1,8 @@
 class Chatroom < ActiveRecord::Base
 	has_many :users, :through => :room_mems
 	has_many :room_mems
+	has_many :tags, :through => :room_tags
+	has_many :room_mems
 	before_create { generate_room_no(:roomno) }
 
 	def generate_room_no(column)
