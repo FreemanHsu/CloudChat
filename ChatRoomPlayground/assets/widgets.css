@@ -1,3 +1,28 @@
+.cloudchat {
+  display: flex;
+  flex-flow: row;
+  position: absolute;
+  min-height: 800px;
+  height: 100%;
+  width: 100%;
+}
 
+.menu-region {
+  height: 100%;
+  flex: 1;
+  background-color: #f00;
+}
+
+.chat-region {
+  height: 100%;
+  flex: 2;
+  background-color: #0f0;
+}
+
+.tool-region {
+  height: 100%;
+  flex: 1;
+  background-color: #00f;
+}
 
 /*# sourceMappingURL=widgets.css.map */
