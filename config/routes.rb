@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   post "create_login_session" => "users#create_login_session"
   delete "logout" => "users#logout", :as => "logout"
 
+  get "home" => "users#home", :as => "home"
+  get "home/edit" => "users#edit", :as => "user"
+  patch "home/edit" => "users#update"
   get "users/:id" => "users#show", :as => "showuser"
   put "users/:id" => "users#add_friend", :as => "addfriend"
   get "chatrooms/:id/enter" => "room_mems#enter", :as => "enterroom"
