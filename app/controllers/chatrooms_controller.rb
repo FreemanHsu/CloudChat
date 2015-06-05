@@ -27,14 +27,12 @@ class ChatroomsController < ApplicationController
   # POST /chatrooms.json
   def create
     @chatroom = Chatroom.new(chatroom_params)
-
-    @current_user ||= User.find_by_auth_token!(cookies[:auth_token]) if cookies[:auth_token]
-    @chatroom.user_id = @current_user.id 
+    @chatroom.user_id = current_user.id 
 
     respond_to do |format|
       if @chatroom.save
         room_mem = RoomMem.new
-        room_mem.user_id = @current_user.id 
+        room_mem.user_id = current_user.id 
         room_mem.chatroom_id = @chatroom.id
         room_mem.save
 

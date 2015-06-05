@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
 	has_many :chatrooms, :through => :room_mems
 	has_many :room_mems
 	has_many :friendships
+	has_many :user_has_msgs
 	# 创建 has_many :through 关联，在 friendships 内找寻 friends。
 	has_many :friends, :through => :friendships
 
