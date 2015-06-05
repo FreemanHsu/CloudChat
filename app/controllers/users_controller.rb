@@ -15,6 +15,23 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def add_friend
+		@current_user ||= User.find_by_auth_token!(cookies[:auth_token]) if cookies[:auth_token]
+		@user = User.find(params[:id])
+
+		unless Friendship.exists?(:user_id => @current_user.id, :friend_id => params[:id])  
+			unless Friendship.exists?(:user_id => params[:id], :friend_id => @current_user.id)
+				unless @current_user.id == @user.id
+					friendship = Friendship.new
+					friendship.user_id = @current_user.id
+					friendship.friend_id = @user.id
+					friendship.save
+				end
+			end
+		end
+		
+	end
+
 	def logout
 		cookies.delete(:auth_token)
 		redirect_to :root

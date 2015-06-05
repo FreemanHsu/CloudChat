@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   delete "logout" => "users#logout", :as => "logout"
 
   get "users/:id" => "users#show", :as => "showuser"
+  put "users/:id" => "users#add_friend", :as => "addfriend"
   get "chatrooms/:id/enter" => "room_mems#enter", :as => "enterroom"
 
   root 'homepage#index'
