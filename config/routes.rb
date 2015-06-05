@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'user_has_msg/new' 
+  get 'user_has_msg/destroy'
+
   resources :chatrooms
   resources :users, only: [:create]
   resources :room_mems
