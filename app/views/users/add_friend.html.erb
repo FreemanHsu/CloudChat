@@ -24,8 +24,8 @@
         <td><%= @user.phone %></td>
         <td><%= @user.status %></td>
         <td><%= @user.updated_at %></td>
-        <td><%= button_to '加为好友', addfriend_path(@user.id), :method => :put %></td>
+        <td><%= link_to '站内信', "#" %></td>
       </tr>
   </tbody>
 </table>
-<td><%= link_to '回到外婆桥', :back %></td>
+<td><%= link_to '回到外婆桥', :root %></td>
