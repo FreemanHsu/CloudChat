@@ -23,8 +23,8 @@
         <td><%= @user.gender %></td>
         <td><%= @user.phone %></td>
         <td><%= @user.status %></td>
-        <td><%= @user.updated_at %></td>
-        <td><%= link_to '站内信', "#" %></td>
+        <td><%= time_ago_in_words @user.updated_at %></td>
+        <td><%= link_to '站内信', newmsg_path(user.id) %></td>
       </tr>
   </tbody>
 </table>

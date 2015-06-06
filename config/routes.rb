@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'user_has_msg/new' 
+  get 'user_has_msg/new/:receiver_id' => "user_has_msg#new", :as => "newmsg"
+  post 'user_has_msg/new/:receiver_id' => "message#create"
   get 'user_has_msg/destroy'
 
   resources :chatrooms
@@ -15,6 +16,10 @@ Rails.application.routes.draw do
   get "home" => "users#home", :as => "home"
   get "home/edit" => "users#edit", :as => "user"
   patch "home/edit" => "users#update"
+
+  get "home/sendmsg" => "user_has_msg#send2", :as => "sendmsg" 
+  get "home/recvmsg" => "user_has_msg#recv", :as => "recvmsg"
+
   get "users/:id" => "users#show", :as => "showuser"
   put "users/:id" => "users#add_friend", :as => "addfriend"
   get "chatrooms/:id/enter" => "room_mems#enter", :as => "enterroom"

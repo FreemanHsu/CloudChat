@@ -25,7 +25,7 @@
         <td><%= chatroom.memnum %></td>
         <td><%= chatroom.roomno %></td>
         <td class="name"><%= chatroom.user_id %></td>
-        <td class="name"><%= chatroom.created_at %></td>
+        <td class="name"><%= time_ago_in_words chatroom.created_at %></td>
         <td><%= link_to '查看', chatroom %></td>
         <td><%= link_to '编辑', edit_chatroom_path(chatroom) %></td>
         <td><%= link_to '删除', chatroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>

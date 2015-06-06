@@ -1,0 +1,14 @@
+<h1> 我收到的站内信</h1>
+<% recv_msgs.each do |c| %>
+    <div >
+       <div class="body">
+         <div class="heading">
+            <span class="name"><%= link_to  c.sender.username, showuser_path(c.sender.id) %><span>
+            <span class="datetime">
+              <%= time_ago_in_words c.created_at %> ago
+            </span>
+         </div>
+         <%= c.message.content %>
+       </div>
+    </div>
+  <% end %>
