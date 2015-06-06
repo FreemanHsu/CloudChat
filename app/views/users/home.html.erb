@@ -21,12 +21,15 @@
         <td><%= item.friend.gender %></td>
         <td><%= item.friend.phone %></td>
         <td><%= item.friend.status %></td>
-        <td><%= item.friend.updated_at %></td>
-        <td><%= link_to '站内信', "#" %></td>
+        <td><%= time_ago_in_words item.friend.updated_at %></td>
+        <td><%= link_to '站内信', newmsg_path(item.friend.id) %></td>
       </tr>
+
     <% end %>
   </tbody>
 </table>
+<%= link_to '我收到的站内信', recvmsg_path %>
+<%= link_to '我发出的站内信', sendmsg_path %>
 
 <td><%= link_to '修改个人信息', user_path %></td> |	
 <td><%= link_to '回到外婆桥', :root %></td>
