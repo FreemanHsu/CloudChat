@@ -1,28 +1,168 @@
-.cloudchat {
+body {
+  min-height: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #333;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.cloudchat-layout {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row;
   position: absolute;
-  min-height: 800px;
   height: 100%;
   width: 100%;
 }
 
 .menu-region {
   height: 100%;
-  flex: 1;
-  background-color: #f00;
+  width: 260px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  background-color: rgba(39, 174, 96, 0.9);
+}
+.menu-region:hover {
+  background-color: #27ae60;
+}
+
+.menu {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.menu * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.menu-profile {
+  width: 92%;
+  margin: 10px auto 0 auto;
+  cursor: pointer;
+  max-height: 55px;
+  overflow: hidden;
+  -webkit-transition: max-height 200ms;
+  transition: max-height 200ms;
+  border-radius: 4px;
+}
+.menu-profile:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+.menu-profile ul {
+  padding: 0;
+  margin: 0;
+  list-style: disc;
+}
+
+.menu-profile-expanded {
+  max-height: 200px;
+  -webkit-transition: max-height 400ms;
+  transition: max-height 400ms;
+}
+
+.menu-profile-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 0.3em;
+}
+
+.menu-profile-avatar {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  height: 38px;
+  width: 38px;
+}
+.menu-profile-avatar span {
+  background-image: url("../assets/andy.png");
+  background-size: cover;
+  display: inline-block;
+}
+
+.avatar-s {
+  width: 38px;
+  height: 38px;
+  border-radius: 4px;
+}
+
+.menu-profile-name {
+  margin: 2px auto;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding: 0.3em 0 0.3em 0.6em;
+  font-size: 1.125em;
+}
+
+.menu-profile-state {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  padding: 0.6em 0.3em;
+}
+
+.menu-profile-list {
+  margin: 0;
+  overflow: hidden;
+  width: 100%;
+  margin: 10px 0;
+  line-height: 24px;
 }
 
 .chat-region {
   height: 100%;
-  flex: 2;
-  background-color: #0f0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-box-flex: 3;
+  -webkit-flex-grow: 3;
+  -ms-flex-positive: 3;
+  flex-grow: 3;
+  background-color: #fff;
 }
 
 .tool-region {
   height: 100%;
-  flex: 1;
-  background-color: #00f;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  background-color: #ecf0f1;
 }
 
 /*# sourceMappingURL=widgets.css.map */
