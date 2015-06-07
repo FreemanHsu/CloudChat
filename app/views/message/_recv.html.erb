@@ -3,6 +3,7 @@
     <div >
        <div class="body">
          <div class="heading">
+            <td class="pic"><%= image_tag(c.sender.avatar) %></td>
             <span class="name"><%= link_to  c.sender.username, showuser_path(c.sender.id) %><span>
             <span class="datetime">
               <%= time_ago_in_words c.created_at %> ago
