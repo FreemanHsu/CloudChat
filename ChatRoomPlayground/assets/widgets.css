@@ -81,6 +81,7 @@ body {
 }
 
 .menu-profile-expanded {
+  background: rgba(255, 255, 255, 0.3);
   max-height: 200px;
   -webkit-transition: max-height 400ms;
   transition: max-height 400ms;
@@ -139,6 +140,91 @@ body {
   width: 100%;
   margin: 10px 0;
   line-height: 24px;
+}
+.menu-profile-list li {
+  padding-left: 15px;
+  text-decoration: none;
+  width: 100%;
+}
+.menu-profile-list li:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.menu-profile-list li span {
+  font-size: 0.95em;
+  padding-left: 10px;
+}
+
+.menu-list {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.menu-list-content {
+  overflow: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 94%;
+  margin: 10px 0 10px auto;
+  border-radius: 4px;
+}
+.menu-list-content p {
+  text-transform: uppercase;
+  opacity: .6;
+  overflow: hidden;
+  clear: both;
+}
+.menu-list-content ul {
+  padding: 0;
+  margin: 0;
+  list-style: disc;
+}
+.menu-list-content ul li {
+  padding: 5px 0 3px 5px;
+  cursor: pointer;
+  text-decoration: none;
+  width: 100%;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.menu-list-content ul li:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.menu-list-content ul li span {
+  padding-left: 15px;
+}
+
+.menu-action {
+  width: 88%;
+  margin: 10px auto;
+}
+.menu-action a {
+  color: #333;
+  width: 100%;
+  text-decoration: none;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-bottom: 2px solid #ccc;
+  border-radius: 2px;
+  padding: 11px 12px;
+  text-align: center;
+  border: none;
+  vertical-align: top;
+  cursor: pointer;
+}
+.menu-action a:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-bottom: 4px solid #ccc;
+  border-left: 2px solid #ccc;
 }
 
 .chat-region {
