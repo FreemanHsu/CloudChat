@@ -23,8 +23,8 @@
     <%= f.text_area :description, rows: 6 %>
   </div>
   <div class="field">
-    <%= f.label "是否公开" %><br>
-    <%= f.text_field :privacy %>
+    <%= f.label "聊天室类型" %><br>
+    <%= f.select :privacy, Chatroom::PRIVACY_TYPES, :prompt => "是否公开" %>
   </div>
   <div class="field">
     <%= f.label "密码" %><br>

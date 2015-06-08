@@ -1,17 +1,18 @@
-<h1> 我发送的站内信</h1>
+
 <% send_msgs.each do |c| %>
     <div >
        <div class="body">
          <div class="heading">
+            <td class="pic"><%= image_tag(c.receiver.avatar) %></td>
             <span class="name"><%= link_to  c.receiver.username, showuser_path(c.receiver.id) %></span>
             <span class="datetime">
               <%= time_ago_in_words c.created_at %> ago
             </span>
             <span>
-            	
+              
             </span>
          </div>
          <%= c.message.content %>
        </div>
     </div>
-  <% end %>
+  <% end %>    
