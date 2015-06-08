@@ -29,7 +29,7 @@
   </div>
   <div class="field">
     <%= f.label "性别" %><br>
-    <%= f.number_field :gender %>
+    <%= f.select :gender,[['男', 0],['女', 1]], {:selected => 0}%>  
   </div>
   <div class="field">
     <%= f.label "描述" %><br>

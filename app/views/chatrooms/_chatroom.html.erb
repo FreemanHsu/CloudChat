@@ -1,9 +1,9 @@
 <h1>聊天室一览</h1>
 
-<table class="table">
+<table class="table table-condensed">
   <thead>
     <tr>
-      <th>封面</th>
+      <th class="name">封面</th>
       <th class="name">聊天室</th>
       <th>类型</th>
       <th>流行度</th>
@@ -30,7 +30,7 @@
         <td><%= link_to '编辑', edit_chatroom_path(chatroom) %></td>
         <td><%= link_to '删除', chatroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-      <tr>
+        <tr>
           <td><%= sanitize(chatroom.description) %></td> 
       </tr>
     <% end %>
