@@ -1,42 +1,52 @@
- <h1> 修改信息</h1>
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<div class="bs-header">
+  <div class="container">
+     <h1> 修改信息</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+    <%= form_for(@user) do |f| %>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <div class="field">
-    <%= f.label "手机号" %><br>
-    <%= f.text_field :phone %>
+      <div class="field">
+        <%= f.label "手机号" %><br>
+        <%= f.text_field :phone %>
+      </div>
+      <div class="field">
+        <%= f.label "邮箱" %><br>
+        <%= f.text_field :email %>
+      </div>
+      <div class="field">
+        <%= f.label "昵称" %><br>
+        <%= f.text_area :nickname %>
+      </div>
+      <div class="field">
+        <%= f.label "头像" %><br>
+        <%= f.text_field :avatar %>
+      </div>
+      <div class="field">
+        <%= f.label "性别" %><br>
+        <%= f.select :gender,[['男', 0],['女', 1]], {:selected => 0}%>  
+      </div>
+      <div class="field">
+        <%= f.label "描述" %><br>
+        <%= f.text_area :description %>
+      </div>
+      <div class="actions">
+        <%= f.submit "提交" %>
+      </div>
+    <% end %>    
   </div>
-  <div class="field">
-    <%= f.label "邮箱" %><br>
-    <%= f.text_field :email %>
+  <div class="direct_to">
+    <td><%= link_to '回到外婆桥', :root %></td>
   </div>
-  <div class="field">
-    <%= f.label "昵称" %><br>
-    <%= f.text_area :nickname %>
-  </div>
-  <div class="field">
-    <%= f.label "头像" %><br>
-    <%= f.text_field :avatar %>
-  </div>
-  <div class="field">
-    <%= f.label "性别" %><br>
-    <%= f.select :gender,[['男', 0],['女', 1]], {:selected => 0}%>  
-  </div>
-  <div class="field">
-    <%= f.label "描述" %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit "提交" %>
-  </div>
-<% end %>
-
+</div>

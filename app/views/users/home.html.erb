@@ -1,34 +1,42 @@
-<h1>好友列表</h1>
+<div class="bs-header">
+  <div class="container">
+    <h1>好友列表</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+     <table class="table table-condensed">
+      <thead>
+        <tr>
+          <th class="name">头像</th>
+          <th>id</th>
+          <th>性别</th>
+          <th>手机号</th>
+          <th>状态</th>
+          <th>最近登录</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @has_friends.each do |item| %>
+          <tr>  
+            <td class="pic"><%= image_tag(item.friend.avatar) %></td>
+            <td><%= link_to item.friend.username, showuser_path(item.friend.id) %></td>
+            <td><%= item.friend.gender %></td>
+            <td><%= item.friend.phone %></td>
+            <td><%= item.friend.status %></td>
+            <td><%= time_ago_in_words item.friend.updated_at %></td>
+            <td><%= link_to '站内信', newmsg_path(item.friend.id) %></td>
+          </tr>
 
-<table class="table table-condensed">
-  <thead>
-    <tr>
-      <th class="name">头像</th>
-      <th>id</th>
-      <th>性别</th>
-      <th>手机号</th>
-      <th>状态</th>
-      <th>最近登录</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @has_friends.each do |item| %>
-      <tr>  
-        <td class="pic"><%= image_tag(item.friend.avatar) %></td>
-        <td><%= link_to item.friend.username, showuser_path(item.friend.id) %></td>
-        <td><%= item.friend.gender %></td>
-        <td><%= item.friend.phone %></td>
-        <td><%= item.friend.status %></td>
-        <td><%= time_ago_in_words item.friend.updated_at %></td>
-        <td><%= link_to '站内信', newmsg_path(item.friend.id) %></td>
-      </tr>
-
-    <% end %>
-  </tbody>
-</table>
-<td><%= link_to '我收到的站内信', recvmsg_path %></td> |
-<td><%= link_to '我发出的站内信', sendmsg_path %></td> |
-<td><%= link_to '修改个人信息', user_path %></td> |	
-<td><%= link_to '回到外婆桥', :root %></td>
-
+        <% end %>
+      </tbody>
+    </table>   
+  </div>
+  <div class="direct_to">
+    <td><%= link_to '我收到的站内信', recvmsg_path %></td> |
+    <td><%= link_to '我发出的站内信', sendmsg_path %></td> |
+    <td><%= link_to '修改个人信息', user_path %></td> | 
+    <td><%= link_to '回到外婆桥', :root %></td>
+  </div>
+</div>

@@ -15,11 +15,9 @@ class UsersController < ApplicationController
 	def show
 		if User.exists?(params[:id])
 			@user = User.find(params[:id])
-			if Friendship.exists?(:user_id => current_user.id, :friend_id => params[:id])
-				redirect_to addfriend_path
-			end
-			if Friendship.exists?(:user_id => params[:id], :friend_id => current_user.id)
-				redirect_to addfriend_path
+			if Friendship.exists?(:user_id => current_user.id, :friend_id => params[:id]) \
+				or Friendship.exists?(:user_id => params[:id], :friend_id => current_user.id)
+				# redirect_to addfriend_path
 			end
 
 		else
