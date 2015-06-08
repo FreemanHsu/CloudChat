@@ -21,8 +21,8 @@ Rails.application.routes.draw do
   get "home/recvmsg" => "user_has_msg#recv", :as => "recvmsg"
 
   get "users/:id" => "users#show", :as => "showuser"
-  put "users/:id" => "users#add_friend", :as => "addfriend"
-  get "chatrooms/:id/enter" => "room_mems#enter", :as => "enterroom"
+  post "users/:id" => "users#add_friend", :as => "addfriend"
+  get "chatrooms/enter/:id" => "room_mems#enter", :as => "enterroom"
 
   root 'homepage#index'
   # The priority is based upon order of creation: first created -> highest priority.

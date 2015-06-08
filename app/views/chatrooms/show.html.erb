@@ -1,44 +1,42 @@
 <p id="notice"><%= notice %></p>
-<h1> 到时聚聚，聊聊程序</h1>
-
-<div class="head">
-  <p id="roomname">
-    <strong>当前聊天室:</strong>
-    <%= @chatroom.roomname %>
-    
-    <strong>聊天室编号:</strong>
-    <%= @chatroom.roomno %>
-  </p>
-  <p id="describe">
-    <%= (@chatroom.description) %>
-  </p>
-
-  <div id="img">
-    <%= image_tag(@chatroom.roomcover) %>
+<div class="bs-header">
+  <div class="container">
+    <h1> 到时聚聚，聊聊程序</h1>
   </div>
-
 </div>
 
-<div class="second">
-  <p>
-  
+<div class="container">
+    <div class="content">
+        <p id="roomname">
+          <strong>当前聊天室:</strong>
+          <%= @chatroom.roomname %>
+          
+          <strong>聊天室编号:</strong>
+          <%= @chatroom.roomno %>
+      </p>
+      <p id="describe"> <%= (@chatroom.description) %> </p>
 
-    <strong>创建人:</strong>
-    <%=  @creater.username %>
+      <div id="img">  <%= image_tag(@chatroom.roomcover) %> </div>
 
-    <%= @chatroom.privacy %>
-
-  </p>
-  <p>
-    <strong>热度:</strong>
-    <%= @chatroom.popularity %>
-  </p>
-  <p>
-    <strong>人数:</strong>
-    <%= @chatroom.memnum %>
+      <p>
+        <strong>创建人:</strong>
+        <%=  @creater.username %>
+        <%= @chatroom.privacy %>
+      </p>
+      <p>
+        <strong>热度:</strong>
+        <%= @chatroom.popularity %>
+      </p>
+      <p>
+        <strong>人数:</strong>
+        <%= @chatroom.memnum %>
+      </p>
+    </div>
+    <div class="direct_to">
+      <td><%= link_to '查看成员列表', room_mem_path %></td> |
+      <td><%= link_to '进入聊天室', enterroom_path(@chatroom.id) %></td> |
+      <td><%= link_to '返回主页', :root %></td>
+    </div>
     
-  </p>
 </div>
-<%= link_to '查看成员列表', room_mem_path %> |
-<%= link_to '进入聊天室', enterroom_path(@chatroom.id) %> |
-<%= link_to '返回主页', :root %>
+

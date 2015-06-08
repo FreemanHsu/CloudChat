@@ -11,6 +11,7 @@ class Chatroom < ActiveRecord::Base
 	  end while Chatroom.exists?(column => self[column])
 	end
 
+    PRIVACY_TYPES = [['公开', true],['私密', false]]
 
 	validates :roomname, presence: true
 	validates :roomcover,  allow_blank: true, format: {
