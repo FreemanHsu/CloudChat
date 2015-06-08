@@ -1,0 +1,13 @@
+<div class="bs-header">
+  <div class="container">
+    <h1> 我收到的的站内信</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+	<%= render partial: 'message/recv', locals: {recv_msgs: @recv_msgs} %>
+  </div>
+  <div class="direct_to">
+  	<td><%= link_to '回到外婆桥', home_path %></td>
+  </div>
+</div>

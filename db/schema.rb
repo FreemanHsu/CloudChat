@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150605124306) do
+ActiveRecord::Schema.define(version: 20150606102120) do
+
+  create_table "chat_logs", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "chatroom_id"
+    t.text     "content"
+    t.string   "msg_tag"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "chatrooms", force: true do |t|
     t.string   "roomname"
@@ -61,14 +70,14 @@ ActiveRecord::Schema.define(version: 20150605124306) do
   end
 
   create_table "user_has_msgs", force: true do |t|
-    t.integer  "message_id"
     t.integer  "sender_id"
     t.integer  "receiver_id"
-    t.boolean  "send_status"
-    t.boolean  "receive_status"
-    t.boolean  "is_read"
+    t.boolean  "send_status",    default: false
+    t.boolean  "receive_status", default: false
+    t.boolean  "is_read",        default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "message_id"
   end
 
   create_table "users", force: true do |t|

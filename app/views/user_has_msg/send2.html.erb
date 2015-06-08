@@ -1,13 +1,13 @@
 <div class="bs-header">
   <div class="container">
-    <h1>新建聊天室</h1>
+    <h1> 我发送的站内信</h1>
   </div>
 </div>
 <div class="container">
   <div class="content">
-    <%= render 'form' %>
+	<%= render partial: 'message/send', locals: {send_msgs: @send_msgs} %>
   </div>
   <div class="direct_to">
-    <%= link_to '返回', :root %>
+  	<td><%= link_to '回到外婆桥', home_path %></td>
   </div>
 </div>

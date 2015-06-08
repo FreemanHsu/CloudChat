@@ -14,3 +14,19 @@
  *= require_self
  *= require font-awesome
  */
+main {
+	padding-top: 20px;
+	font-family: 'Open Sans', Lato, sans-serif;
+	font-size: 16px;
+	line-height: 1.6em;
+	background: #edece4;
+}
+
+#global-footer {
+	padding: 40px 20px;
+	color: #a6a6a6;
+	font-size: 0.8em;
+	text-align: center;
+	background: #18191b;
+	border-bottom: #0a0a0a 5px solid;
+}

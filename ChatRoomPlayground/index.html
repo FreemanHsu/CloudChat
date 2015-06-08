@@ -6,13 +6,33 @@
 	<title>CloudChat</title>
 	<link rel="stylesheet" type="text/css" href="assets/common.css">
 	<link rel="stylesheet" type="text/css" href="assets/widgets.css">
+	<link href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
 </head>
 <body>
 	<div class="cloudchat-layout">
 		<div class="menu-region">
-			a
 			<nav class="menu">
-				<header class="menu-profile">
+				<header id="left-menu-profile" class="menu-profile">
+					<div class="menu-profile-wrapper">
+						<div class="menu-profile-avatar">
+							<span class="avatar-s"></span>
+						</div>
+						<div class="menu-profile-name">
+							AndyHsu
+						</div>
+						<div class="menu-profile-state">
+							<li class="fa fa-chevron-down"></li>
+							<li class="fa fa-chevron-up" style="display: none;"></li>
+						</div>
+					</div>
+					<ul class="menu-profile-list">
+						<li class="menu-profile-list-item">
+							<li class="fa fa-home"></li>Home
+						</li>
+						<li class="menu-profile-list-item">
+							<li class="fa fa-sign-out"></li>Signout
+						</li>
+					</ul>
 				</header>
 				<section class="menu-list">
 					<ul class="recent-room-list"></ul>
@@ -24,7 +44,6 @@
 
 		<div class="chat-region">
 			<div class="chat-wrapper">
-				b
 				<div class="chat-app">
 					<div class="chat-app-header">
 					</div>
@@ -38,7 +57,6 @@
 
 		<div class="tool-region">
 			<div class="tool-bar">
-				c
 				<div class="tool-bar-search">
 				</div>
 				<div class="tool-bar-nav">
@@ -52,5 +70,16 @@
 	<script src="http://cdn.bootcss.com/underscore.js/1.8.3/underscore-min.js"></script>
 	<script src="http://cdn.bootcss.com/backbone.js/1.1.2/backbone-min.js"></script>
 	<script src="http://cdn.bootcss.com/backbone-localstorage.js/1.1.16/backbone.localStorage-min.js"></script>
+	<script type="text/javascript">
+		$('#left-menu-profile').click(function(){
+			console.log("!!!");
+			if($('#left-menu-profile').hasClass("menu-profile-expanded")){
+				$('#left-menu-profile').removeClass("menu-profile-expanded");
+			}
+			else{
+				$('#left-menu-profile').addClass("menu-profile-expanded");
+			}
+		});
+	</script>
 </body>
 </html>

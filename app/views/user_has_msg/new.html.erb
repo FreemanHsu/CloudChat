@@ -1,2 +1,13 @@
-<h1>UserHasMsg#new</h1>
-<p>Find me in app/views/user_has_msg/new.html.erb</p>
+<div class="bs-header">
+  <div class="container">
+    <h1>向 <%= @receiver.username %> 发送站内信 </h1>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+    <%= render partial: 'form' %>
+  </div>
+  <div class="direct_to">
+    <td><%= link_to '回到外婆桥', home_path %></td>
+  </div>
+</div>

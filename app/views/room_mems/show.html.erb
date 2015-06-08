@@ -1,31 +1,39 @@
-<h1>成员一览表</h1>
+<div class="bs-header">
+  <div class="container">
+    <h1>成员一览表</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="name">头像</th>
+          <th>成员id</th>
+          <th>性别</th>
+          <th>手机号</th>
+          <th>状态</th>
+          <th>最近登录</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th class="name">头像</th>
-      <th>成员id</th>
-      <th>性别</th>
-      <th>手机号</th>
-      <th>状态</th>
-      <th>最近登录</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @room_mems.each do |item| %>
-      <tr>  
-        <td class="pic"><%= image_tag(item.user.avatar) %></td>
-        <td><%= item.user.username %></td>
-        <td><%= item.user.gender %></td>
-        <td><%= item.user.phone %></td>
-        <td><%= item.user.status %></td>
-        <td><%= item.user.updated_at %></td>
-        <td><%= link_to '用户主页', showuser_path(item.user.id) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<td><%= link_to '回到外婆桥', :root %></td>
-<br>
+      <tbody>
+        <% @room_mems.each do |item| %>
+          <tr>  
+            <td class="pic"><%= image_tag(item.user.avatar) %></td>
+            <td><%= item.user.username %></td>
+            <td><%= item.user.gender %></td>
+            <td><%= item.user.phone %></td>
+            <td><%= item.user.status %></td>
+            <td><%= time_ago_in_words item.user.updated_at %></td>
+            <td><%= link_to '用户主页', showuser_path(item.user.id) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="direct_to">
+    <td><%= link_to '回到外婆桥', :root %></td>
+  </div>
+</div>
