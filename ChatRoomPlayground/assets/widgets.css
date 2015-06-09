@@ -32,10 +32,10 @@ body {
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
   flex-grow: 0;
-  background-color: rgba(39, 174, 96, 0.9);
+  background-color: rgba(52, 152, 219, .9);
 }
 .menu-region:hover {
-  background-color: #27ae60;
+  background-color: #3498db;
 }
 
 .menu {
