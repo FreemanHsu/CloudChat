@@ -47,7 +47,7 @@ class ChatroomsController < ApplicationController
         room_mem.chatroom_id = @chatroom.id
         room_mem.save
 
-        format.html { redirect_to @chatroom, notice: 'Chatroom was successfully created.' }
+        format.html { redirect_to set_tag_path(@chatroom.id) }
         format.json { render :show, status: :created, location: @chatroom }
       else
         format.html { render :new }
