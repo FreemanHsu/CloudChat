@@ -49,12 +49,14 @@
 }
 
 .home-page-roomtag{
+	height: 20px;
+	overflow: hidden;
 	margin-bottom: 10px;
 	span{
-		cursor: pointer;
 		margin-right: 5px;
 		&:hover{
 			background-color: #337ab7;
+			cursor: pointer;
 		}
 	}
 }
