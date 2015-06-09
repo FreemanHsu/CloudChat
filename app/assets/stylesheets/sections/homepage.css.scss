@@ -1,10 +1,16 @@
 // Place all the styles related to the homepage controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.homepage-index{
+	background-color: #f1f0ed;
+}
+
 .jumbotron{
 	height: 600px;
 	background: none;
 	&:after{
+		min-height: 600px;
 		max-height: 600px;
 		content: '';
 		display: block;
@@ -57,5 +63,20 @@
 			border-bottom: 2px solid #eee;
 			border-left: none;
 		}
+	}
+}
+
+#explore{
+	position: relative;
+	margin-top: -40px;
+	padding-top: 0px;
+	height: 60px;
+	background-color: #dbd8d0;
+	p{
+		color: #7d7669;
+		padding-top: 20px;
+		font-size: 1em;
+		text-align: center;
+		font-weight: 700;
 	}
 }

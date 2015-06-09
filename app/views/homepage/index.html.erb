@@ -13,17 +13,16 @@
 		<p>
 			collecting &amp; gathering to inspire afflatus and wisdom.
 		</p>
-
 		<div class="sign-btn"><%= link_to "SIGN UP FOR FREE", signup_path %></div>
-
 	</div>
+</div>
 
+<div id="explore">
+	<p>Explore the chatrooms</p>
 </div>
 
 <div class="container">
-	<% if current_user %>
-    <%= link_to '新建聊天室', new_chatroom_path %>
-    <% end %>
-	<p>Explore the chatrooms:</p>
 	<%= render :partial => "chatrooms/chatroom" %>
 </div>
+
+<%= render :partial => "shared/footer" %>

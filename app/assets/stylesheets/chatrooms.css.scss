@@ -1,3 +1,49 @@
 // Place all the styles related to the Chatrooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.thumbnail{
+	margin-top: 20px;
+	margin-bottom: 0;
+	background-color: rgba(255,255,255,.5);
+	&:hover{
+		background-color: rgba(255,255,255,1);
+	}
+	p{
+		margin: 10px 0;
+		height: 60px;
+		border-top: 1px solid #eee;
+		border-bottom: 1px solid #eee;
+		font-weight: 400;
+	}
+	img{
+		width: 80px;
+		height: 80px;
+		border: 1px solid #eee;
+		border-radius: 50% 50%;
+		&:hover{
+			border: 2px solid #3297ff;
+			cursor: pointer;
+		}
+	}
+	h3{
+		margin-top: -5px;
+		text-align: center;
+		font-weight: 400;
+	}
+	a{
+		color: #000;
+		display: inline-block;
+		width: 60px;
+		height: 20px;
+		text-align: center;
+		background-color: #fff;
+		border-radius: 4px;
+		float: right;
+		&:hover{
+			text-decoration: none;
+			background-color: #3297ff;
+			color: #fff;
+		}
+	}
+}
