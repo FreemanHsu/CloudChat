@@ -14,13 +14,3 @@
  *= require_self
  *= require font-awesome
  */
-
-#footer {
-	margin-top: 20px;
-	padding: 10px 20px;
-	color: #a6a6a6;
-	font-size: 0.8em;
-	text-align: center;
-	background: #18191b;
-	border-bottom: #0a0a0a 5px solid;
-}
