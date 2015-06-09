@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150606102120) do
+ActiveRecord::Schema.define(version: 20150609120828) do
 
   create_table "chat_logs", force: true do |t|
     t.integer  "user_id"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20150606102120) do
 
   create_table "chatrooms", force: true do |t|
     t.string   "roomname"
-    t.string   "roomcover",   default: "assets/images/ruby.jpg"
+    t.string   "roomcover",   default: "ruby.jpg"
     t.boolean  "privacy"
     t.integer  "popularity",  default: 1
     t.integer  "memnum",      default: 1
