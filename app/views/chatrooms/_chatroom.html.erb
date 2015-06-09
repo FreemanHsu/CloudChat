@@ -7,6 +7,9 @@
         <h3><%= chatroom.roomname %></h3>
         <p><%= sanitize(chatroom.description) %></p>
         <p><%= chatroom.memnum %> PEOPLE</p>
+        <% chatroom.tags.each do |tag|  %>
+        <p> <%= tag.tagname %> </p>
+        <% end  %>
         <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
         <%= link_to '查看', chatroom %>
       </div>
