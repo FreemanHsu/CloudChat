@@ -1,10 +1,21 @@
 class ChatroomsController < ApplicationController
   before_action :set_chatroom, only: [:show, :edit, :update, :destroy]
 
+  
   # GET /chatrooms
   # GET /chatrooms.json
   def index
-    @chatrooms = Chatroom.all
+  end
+
+  def list
+    @n = Chatroom.where(:privacy => false).count
+    @@num = @@num + params[:num].to_i
+    if @@num < 0
+      @@num = 0
+    elsif @@num >= @n
+      @@num = @n - 10
+    end
+    @chatrooms = Chatroom.where(:privacy => false).limit(10).offset(@@num)
   end
 
   # GET /chatrooms/1

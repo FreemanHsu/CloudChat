@@ -1,0 +1,47 @@
+<div class="bs-header">
+  <div class="container">
+    <h1>搜索结果</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="name">封面</th>
+          <th class="name">聊天室</th>
+          <th>类型</th>
+          <th>流行</th>
+          <th>人数</th>
+          <th>房号</th>
+          <th class="name">创建人</th>
+          <th class="name">创建时间</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody class="content">
+        <% @chatroom.each do |chatroom| %>
+            <tr>
+              <td class="cover"><%= image_tag(chatroom.roomcover) %></td>
+              <td class="name"><%= chatroom.roomname %></td>
+              <td><%= chatroom.privacy %></td>
+              <td><%= chatroom.popularity %></td>
+              <td><%= chatroom.memnum %></td>
+              <td><%= chatroom.roomno %></td> 
+              <td class="name"> <%= User.find(chatroom.user_id).username %> </td>
+              <td class="name"><%= time_ago_in_words chatroom.created_at %></td>
+              <td><%= link_to '进入', chatroom %></td>
+            </tr>
+              <tr>
+                <td><%= sanitize(chatroom.description) %></td> 
+            </tr>
+          
+        <% end %>
+      </tbody>
+    </table>    
+  </div>
+  <div class="direct_to">
+    <td><%= link_to '回到外婆桥', :root %></td>
+  </div>
+</div>
