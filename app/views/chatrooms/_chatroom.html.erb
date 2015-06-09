@@ -6,9 +6,8 @@
       <div class="caption">
         <h3><%= chatroom.roomname %></h3>
         <p><%= sanitize(chatroom.description) %></p>
-        <p><%= chatroom.memnum %> PEOPLE</p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-        <%= link_to '查看', chatroom %>
+        <span><li class="fa fa-users"></li> <b><%= chatroom.memnum %></b> Members</span>
+        <%= link_to 'JOIN', chatroom %>
       </div>
     </div>
   </div>
