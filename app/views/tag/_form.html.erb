@@ -1,0 +1,15 @@
+<div>
+  <%= form_tag after_set_tag_path(@chatroom.id) do %>
+  <dl>
+    <dt> 
+      <p>标签 1 </p>
+      <%= text_field_tag "tag1", params[:tag1] %>
+      <p>标签 2 </p>
+      <%= text_field_tag "tag2", params[:tag2] %>
+      <p>标签 3 </p>
+      <%= text_field_tag "tag3", params[:tag3] %>
+      <%= submit_tag "提交",  :class => "login-button btn btn-primary" %> 
+    </dt>
+  </dl>
+  <% end %>
+</div>

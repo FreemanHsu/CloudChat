@@ -8,6 +8,8 @@
         <p><%= sanitize(chatroom.description) %></p>
         <span><li class="fa fa-users"></li> <b><%= chatroom.memnum %></b> Members</span>
         <%= link_to 'JOIN', chatroom %>
+        <% chatroom.tags.each do |tag|  %>
+        <p> <%= tag.tagname %> </p>
       </div>
     </div>
   </div>
