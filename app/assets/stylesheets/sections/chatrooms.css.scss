@@ -47,3 +47,14 @@
 		}
 	}
 }
+
+.home-page-roomtag{
+	margin-bottom: 10px;
+	span{
+		cursor: pointer;
+		margin-right: 5px;
+		&:hover{
+			background-color: #337ab7;
+		}
+	}
+}

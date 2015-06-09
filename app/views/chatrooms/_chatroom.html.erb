@@ -6,10 +6,12 @@
       <div class="caption">
         <h3><%= chatroom.roomname %></h3>
         <p><%= sanitize(chatroom.description) %></p>
+        <div class="home-page-roomtag">
+          <% chatroom.tags.each do |tag|  %>
+            <span class="label label-info"><%= tag.tagname %> </span>
+          <% end %>
+        </div>
         <span><li class="fa fa-users"></li> <b><%= chatroom.memnum %></b> Members</span>
-        <% chatroom.tags.each do |tag|  %>
-          <p> <%= tag.tagname %> </p>
-        <% end  %>
         <%= link_to 'JOIN', chatroom %>
       </div>
     </div>
