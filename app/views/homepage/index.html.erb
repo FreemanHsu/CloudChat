@@ -1,7 +1,29 @@
-<div class="home-banner" data-stretch="<%= image_url "clouds.jpeg" %>">
-	<%= render :partial => "chatrooms/chatroom" %> 
+<div class="jumbotron">
+	<div class="container">
+		<h1>
+			<span>C</span>loud
+			<span>C</span>hat
+		</h1>
+		<p>
+			Literally chatting in clouds via cloud.
+		</p>	
+		<p>
+			Share ideas and opinions freely and instantly, 
+		</p>
+		<p>
+			collecting &amp; gathering to inspire afflatus and wisdom.
+		</p>
+
+		<div class="sign-btn"><%= link_to "SIGN UP FOR FREE", signup_path %></div>
+
+	</div>
+
 </div>
 
-<script>
-  	$('.home-banner').anystretch();
-</script>
+<div class="container">
+	<% if current_user %>
+    <%= link_to '新建聊天室', new_chatroom_path %>
+    <% end %>
+	<p>Explore the chatrooms:</p>
+	<%= render :partial => "chatrooms/chatroom" %>
+</div>

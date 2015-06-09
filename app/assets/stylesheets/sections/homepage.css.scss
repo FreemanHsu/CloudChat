@@ -1,18 +1,61 @@
 // Place all the styles related to the homepage controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.home-banner {
-	.site-nav{
-		position: relative;
-		left: 0;
-		right: 0;
+.jumbotron{
+	height: 600px;
+	background: none;
+	&:after{
+		max-height: 600px;
+		content: '';
+		display: block;
+		position: absolute;
 		top: 0;
-		z-index: 9999;
-		padding-top: 60px;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background: image-url("cloudbg.jpg") center center;
+		background-size: cover;
+		z-index: -9999;
 	}
-  	.banner-inner {
-  		margin: 0 auto;
-    	height: 800px;
-    	position: relative;
-  	}
+	font-family: DP,sans-serif;
+	color: #fff;
+	h1{
+		font-size: 5em;
+		span{
+			font-weight: 700;
+		}
+	}
+	p{
+		font-size: 1.5em;
+		font-weight: 300;
+	}
+}
+
+.sign-btn{
+	height: 54px;
+	width: 290px;
+	margin-top: 45px;
+	a{	
+		text-align: center;
+		display: inline-block;
+		position: relative;
+		padding: 18px 0;
+		font-size: 18px;
+		font-weight: 600;
+		letter-spacing: 2px;
+		line-height: 1;
+		height: 100%;
+		width: 100%;
+		border-radius: 5px;
+		background-color: #fff;
+		color: rgba(50,151,255,1);
+		font-family: proxima-nova-alt,Proxima Nova Alt,sans-serif;
+		border-bottom: 4px solid #eee;
+		border-left: 2px solid #eee;
+		&:hover{
+			text-decoration: none;
+			border-bottom: 2px solid #eee;
+			border-left: none;
+		}
+	}
 }

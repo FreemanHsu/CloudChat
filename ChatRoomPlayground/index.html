@@ -26,18 +26,32 @@
 						</div>
 					</div>
 					<ul class="menu-profile-list">
-						<li class="menu-profile-list-item">
-							<li class="fa fa-home"></li>Home
+						<li>
+							<a><div class="fa fa-home"></div><span>Home</span></a>
 						</li>
-						<li class="menu-profile-list-item">
-							<li class="fa fa-sign-out"></li>Signout
+						<li>
+							<a><div class="fa fa-sign-out"></div><span>Signout</span></a>
 						</li>
 					</ul>
 				</header>
 				<section class="menu-list">
-					<ul class="recent-room-list"></ul>
+					<div class="menu-list-content">
+						<p>ALL CONVERSATIONS</p>
+						<ul>
+							<li>
+								<div class="fa fa-cloud"></div><span>SomeRoomA</span>
+							</li>
+							<li>
+								<div class="fa fa-cloud"></div><span>SomeRoomB</span>
+							</li>
+							<li>
+								<div class="fa fa-cloud"></div><span>SomeRoomC</span>
+							</li>
+						</ul>
+					</div>
 				</section>
 				<footer class="menu-action">
+					<a>Create a room</a>
 				</footer>
 			</nav>
 		</div>
@@ -66,18 +80,22 @@
 			</div>
 		</div>
 	</div>
-	<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
-	<script src="http://cdn.bootcss.com/underscore.js/1.8.3/underscore-min.js"></script>
-	<script src="http://cdn.bootcss.com/backbone.js/1.1.2/backbone-min.js"></script>
-	<script src="http://cdn.bootcss.com/backbone-localstorage.js/1.1.16/backbone.localStorage-min.js"></script>
+	<script src="assets/vendor/jquery.min.js"></script>
+	<script src="assets/vendor/underscore-min.js"></script>
+	<script src="assets/vendor/backbone-min.js"></script>
+	<script src="assets/vendor/backbone.localStorage-min.js"></script>
 	<script type="text/javascript">
 		$('#left-menu-profile').click(function(){
 			console.log("!!!");
 			if($('#left-menu-profile').hasClass("menu-profile-expanded")){
 				$('#left-menu-profile').removeClass("menu-profile-expanded");
+				$('.fa-chevron-down').show();
+				$('.fa-chevron-up').hide();
 			}
 			else{
 				$('#left-menu-profile').addClass("menu-profile-expanded");
+				$('.fa-chevron-down').hide();
+				$('.fa-chevron-up').show();
 			}
 		});
 	</script>
