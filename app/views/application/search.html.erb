@@ -1,9 +1,8 @@
 <div class="bs-header">
   <div class="container">
-    <h1>聊天室一览</h1>
+    <h1>搜索结果</h1>
   </div>
 </div>
-
 <div class="container">
   <div class="content">
     <table class="table">
@@ -22,8 +21,7 @@
       </thead>
 
       <tbody class="content">
-        <% @chatrooms.each do |chatroom| %>
-          <% if chatroom.privacy != true %>
+        <% @chatroom.each do |chatroom| %>
             <tr>
               <td class="cover"><%= image_tag(chatroom.roomcover) %></td>
               <td class="name"><%= chatroom.roomname %></td>
@@ -33,26 +31,17 @@
               <td><%= chatroom.roomno %></td> 
               <td class="name"> <%= User.find(chatroom.user_id).username %> </td>
               <td class="name"><%= time_ago_in_words chatroom.created_at %></td>
-              <td><%= link_to '查看', chatroom %></td>
-              <td><%= link_to '编辑', edit_chatroom_path(chatroom) %></td>
-              <td><%= link_to '删除', chatroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to '进入', chatroom %></td>
             </tr>
               <tr>
                 <td><%= sanitize(chatroom.description) %></td> 
             </tr>
-          <% end  %>
           
         <% end %>
       </tbody>
     </table>    
   </div>
   <div class="direct_to">
-    <% if current_user %>
-      <%= link_to '首页', :root %>
-      <%= link_to '上一页', list_index_path(-10) %>
-      <%= link_to '新建聊天室', new_chatroom_path %>
-      <%= link_to '下一页', list_index_path(10) %>
-      <%= link_to '尾页', list_index_path( @n ) %>
-    <% end %>
+    <td><%= link_to '回到外婆桥', :root %></td>
   </div>
 </div>
