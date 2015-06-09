@@ -23,6 +23,9 @@ Rails.application.routes.draw do
   get "users/:id" => "users#show", :as => "showuser"
   post "users/:id" => "users#add_friend", :as => "addfriend"
   get "chatrooms/enter/:id" => "room_mems#enter", :as => "enterroom"
+  post "chatrooms/enter" => "application#search", :as => "search_id"
+
+  get "list/:num" => "chatrooms#list", :as => "list_index"
 
   root 'homepage#index'
   # The priority is based upon order of creation: first created -> highest priority.
