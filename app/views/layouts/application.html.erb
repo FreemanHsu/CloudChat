@@ -2,24 +2,18 @@
 <html>
 <head>
   <title>Cloudchat</title>
+  <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
 </head>
 <body class="<%= params[:controller] + '-' + params[:action] %>">
-	<%= render :partial => "shared/banner" %> 
-	<main>
-		<%= yield %>
-	</main>
-
-
+	<%= yield %>
 	<footer id="global-footer">
 	  <p>Lovingly created and maintained by <a href="https://github.com/FreemanHsu">Andy Hsu</a> + <a href="https://github.com/DeanChensj">Dean Chen</a> .</p>
 	    <hr>
 	  <p>All Rights Reserved.</p>
 	</footer>
-
 </body>
 </html>
 
