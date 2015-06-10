@@ -38,7 +38,7 @@
 					<div class="menu-list-content">
 						<p>ALL CONVERSATIONS</p>
 						<ul>
-							<li>
+							<li class="menu-list-current-room">
 								<div class="fa fa-cloud"></div><span>SomeRoomA</span>
 							</li>
 							<li>
@@ -57,13 +57,30 @@
 		</div>
 
 		<div class="chat-region">
-			<div class="chat-wrapper">
-				<div class="chat-app">
-					<div class="chat-app-header">
+			<div class="chat-app">
+				<header class="chat-app-header">
+					<div id="chat-header">
+						<div class="chat-header-avatar">
+							<img src="assets/andy.png">
+						</div>
+						<div class="chat-header-actions">
+							<div class="chat-header-action-setting">
+								 <i class="fa fa-cog fa-2x"></i>
+							</div>
+						</div>
+						<div class="chat-header-content">
+							<h2>AndyHsu/CloudChat</h2>
+						</div>
 					</div>
-					<div class="chat-app-content">
-					</div>
-					<div class="chat-app-input">
+				</header>
+				<div class="chat-app-content-panel">
+
+				</div>
+				<div class="chat-app-input">
+					<div class="chat-app-input-wrapper">
+						<div class="chat-app-input-box">
+							<textarea id="chat-input-textarea" placeholder="Click here to type a chat message." maxlength="4096"></textarea>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -86,7 +103,6 @@
 	<script src="assets/vendor/backbone.localStorage-min.js"></script>
 	<script type="text/javascript">
 		$('#left-menu-profile').click(function(){
-			console.log("!!!");
 			if($('#left-menu-profile').hasClass("menu-profile-expanded")){
 				$('#left-menu-profile').removeClass("menu-profile-expanded");
 				$('.fa-chevron-down').show();
