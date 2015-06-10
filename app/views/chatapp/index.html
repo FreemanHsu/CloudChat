@@ -1,0 +1,105 @@
+<div class="cloudchat-layout">
+	<div class="menu-region">
+		<nav class="menu">
+			<header id="left-menu-profile" class="menu-profile">
+				<div class="menu-profile-wrapper">
+					<div class="menu-profile-avatar">
+						<span class="avatar-s"></span>
+					</div>
+					<div class="menu-profile-name">
+						AndyHsu
+					</div>
+					<div class="menu-profile-state">
+						<li class="fa fa-chevron-down"></li>
+						<li class="fa fa-chevron-up" style="display: none;"></li>
+					</div>
+				</div>
+				<ul class="menu-profile-list">
+					<li>
+						<a><div class="fa fa-home"></div><span>Home</span></a>
+					</li>
+					<li>
+						<a><div class="fa fa-sign-out"></div><span>Signout</span></a>
+					</li>
+				</ul>
+			</header>
+			<section class="menu-list">
+				<div class="menu-list-content">
+					<p>ALL CONVERSATIONS</p>
+					<ul>
+						<li class="menu-list-current-room">
+							<div class="fa fa-cloud"></div><span>SomeRoomA</span>
+						</li>
+						<li>
+							<div class="fa fa-cloud"></div><span>SomeRoomB</span>
+						</li>
+						<li>
+							<div class="fa fa-cloud"></div><span>SomeRoomC</span>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<footer class="menu-action">
+				<a>Create a room</a>
+			</footer>
+		</nav>
+	</div>
+
+	<div class="chat-region">
+		<div class="chat-app">
+			<header class="chat-app-header">
+				<div id="chat-header">
+					<div class="chat-header-avatar">
+						<img src="../andy.png">
+					</div>
+					<div class="chat-header-actions">
+						<div class="chat-header-action-setting">
+							 <i class="fa fa-cog fa-2x"></i>
+						</div>
+					</div>
+					<div class="chat-header-content">
+						<h2>AndyHsu/CloudChat</h2>
+					</div>
+				</div>
+			</header>
+			<div class="chat-app-content-panel">
+
+			</div>
+			<div class="chat-app-input">
+				<div class="chat-app-input-wrapper">
+					<div class="chat-app-input-box">
+						<textarea id="chat-input-textarea" placeholder="Click here to type a chat message." maxlength="4096"></textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="tool-region">
+		<div class="tool-bar">
+			<div class="tool-bar-search">
+			</div>
+			<div class="tool-bar-nav">
+			</div>
+			<div class="tool-bar-content">
+			</div>
+		</div>
+	</div>
+</div>
+<script src="../lib/underscore-min.js"></script>
+<script src="../lib/backbone-min.js"></script>
+<script src="../lib/backbone.localStorage-min.js"></script>
+<script type="text/javascript">
+	$('#left-menu-profile').click(function(){
+		if($('#left-menu-profile').hasClass("menu-profile-expanded")){
+			$('#left-menu-profile').removeClass("menu-profile-expanded");
+			$('.fa-chevron-down').show();
+			$('.fa-chevron-up').hide();
+		}
+		else{
+			$('#left-menu-profile').addClass("menu-profile-expanded");
+			$('.fa-chevron-down').hide();
+			$('.fa-chevron-up').show();
+		}
+	});
+</script>

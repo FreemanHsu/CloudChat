@@ -81,3 +81,28 @@
 		font-weight: 700;
 	}
 }
+
+.login-btn{
+	position: absolute;
+	right: 50px;
+	top: 50px;
+	a{
+		cursor: pointer;
+		display: block;
+		width: 220px;
+		height: 40px;
+		border: 2px solid #fff;
+		border-radius: 4px;
+		background-color: rgba(50,151,255,0);
+		color: #fff;
+		text-decoration: none;
+		text-align: center;
+		font-size: 14px;
+		padding: 9px 0;
+		&:hover{
+			cursor: pointer;
+			background-color: #fff;
+			color: rgba(50,151,255,1);
+		}
+	}	
+}
