@@ -29,7 +29,7 @@ Rails.application.routes.draw do
  
   get "list/:num" => "chatrooms#list", :as => "list_index"
 
-
+  get "chatapp/:name" => "chatapp#index", :as => "chatapp"
 
   root 'homepage#index'
   # The priority is based upon order of creation: first created -> highest priority.
