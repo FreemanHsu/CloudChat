@@ -15,8 +15,5 @@
 /log/*.log
 /tmp
 
-# Ignore Irrelavant file in playground
-/ChatRoomPlayground/.sass-cache
-/ChatRoomPlayground/node_modules
-/ChatRoomPlayground/sass
-/ChatRoomPlayground/Gruntfile.js
+/public/stylesheets/node_modules
+/public/stylesheets/*.map
