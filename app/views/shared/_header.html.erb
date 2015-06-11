@@ -1,0 +1,14 @@
+<div>
+	<div class="search box">
+		<div>
+		    <%= form_tag search_path do %>
+		    <dl>
+		      <dt> 
+		       	<%= text_field_tag :id, params[:id] %> 
+		   	 	<%= submit_tag "搜索",  :class => "login-button btn btn-primary" %> 
+		      </dt>
+		    </dl>
+		    <% end %>
+		</div>
+	</div>	
+</div>

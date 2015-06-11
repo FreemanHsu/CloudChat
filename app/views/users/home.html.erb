@@ -1,3 +1,4 @@
+<%= render :partial => "shared/header" %>
 <div class="bs-header">
   <div class="container">
     <h1>好友列表</h1>
@@ -10,8 +11,6 @@
         <tr>
           <th class="name">头像</th>
           <th>id</th>
-          <th>性别</th>
-          <th>手机号</th>
           <th>状态</th>
           <th>最近登录</th>
           <th colspan="3"></th>
@@ -22,8 +21,6 @@
           <tr>  
             <td class="pic"><%= image_tag(item.friend.avatar) %></td>
             <td><%= link_to item.friend.username, showuser_path(item.friend.id) %></td>
-            <td><%= item.friend.gender %></td>
-            <td><%= item.friend.phone %></td>
             <td><%= item.friend.status %></td>
             <td><%= time_ago_in_words item.friend.updated_at %></td>
             <td><%= link_to '站内信', newmsg_path(item.friend.id) %></td>
@@ -33,9 +30,10 @@
     </table>   
   </div>
   <div class="direct_to">
-    <td><%= link_to '我收到的站内信', recvmsg_path %></td> |
-    <td><%= link_to '我发出的站内信', sendmsg_path %></td> |
+    <td><%= link_to '我收到的站内信', recvmsg_path('first') %></td> |
+    <td><%= link_to '我发出的站内信', sendmsg_path('first') %></td> |
     <td><%= link_to '修改个人信息', user_path %></td> | 
     <td><%= link_to '回到外婆桥', :root %></td>
   </div>
 </div>
+<%= render :partial => "shared/footer" %>

@@ -1,3 +1,4 @@
+# encoding: utf-8
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -17,13 +18,17 @@ UserHasMsg.delete_all
 Friendship.delete_all
 ChatLog.delete_all
 
+names = ['python', 'ruby', 'python2', 'cpp', 'h5', 'grunt', 'angular', 'java', 'haskell', 'lisp', 'lua', 'node', 'bower']
+tagnames = ['UCLA', 'UCSD' , 'USC', 'MIT', 'Stanford', 'Harvad', 'UIUC']
+
 # Add Test Users
 for i in 1..100 do
-	User.create(username: 'User'+i.to_s, password:'123456')
+	r = Random.rand(13)
+	User.create(username: 'User'+i.to_s, avatar: names[r]+'.jpg', password:'123456')
 end
 
+
 # Add Test Chatrooms
-names = ['python', 'ruby', 'python2', 'cpp', 'h5', 'grunt', 'angular', 'java', 'haskell', 'lisp', 'lua', 'node', 'bower']
 
 for i in 1..100 do
 	r = Random.rand(13)
@@ -31,14 +36,14 @@ for i in 1..100 do
 					roomcover: names[r]+'.jpg',
 					privacy: r&1 == 1? 'true' : 'false',
 					memnum: '20',
-					description:'Dummy '*Random.rand(3)+'Foo '*Random.rand(3)+'Description...',
+					description:'Dummy '*Random.rand(3)+'Foo '*Random.rand(3),
 					user_id: 1+Random.rand(100),
 					popularity: Random.rand(100),
 					key: r&1 == 1? '1234' : '')
 end
 
 tags = []
-for item in names do
+for item in tagnames do
 	t = Tag.create(tagname: item)
 	tags << t
 end
@@ -46,9 +51,10 @@ end
 for i in 1..100 do 
 	chatroom = Chatroom.find(i)
 	chatroom.tags = []
-	for j in 1..5 do
+	chatroom.tags << tags[Random.rand(7)]
+	for j in 1..3 do
 		if Random.rand(100)>50
-			chatroom.tags << tags[Random.rand(13)]
+			chatroom.tags << tags[Random.rand(7)]
 		end
 	end
 end
@@ -70,3 +76,20 @@ for i in 1..100 do
 		user.friends << user2
 	end
 end
+
+# Add Test Message
+for i in 1..10 do
+	user = User.find(i)
+	for j in 1..5 do
+		user2 = User.find(Random.rand(100)+1)
+		msg = Message.create(content: names[Random.rand(13)])
+
+		u_h_m = UserHasMsg.new
+		u_h_m.sender = user
+		u_h_m.receiver = user2
+		u_h_m.message = msg
+		msg.user_has_msg = u_h_m
+		u_h_m.save
+		msg.save
+	end
+end 

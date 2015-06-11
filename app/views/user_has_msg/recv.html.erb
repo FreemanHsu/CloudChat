@@ -8,6 +8,10 @@
 	<%= render partial: 'message/recv', locals: {recv_msgs: @recv_msgs} %>
   </div>
   <div class="direct_to">
+  	<td><%= link_to '首页', recvmsg_path('first') %></td>
+  	<td><%= link_to '上一页', recvmsg_path('-10') %></td>
   	<td><%= link_to '回到外婆桥', home_path %></td>
+  	<td><%= link_to '下一页', recvmsg_path('10') %></td>
+  	<td><%= link_to '尾页', recvmsg_path('last') %></td>
   </div>
 </div>
