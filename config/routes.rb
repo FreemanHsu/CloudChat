@@ -17,19 +17,18 @@ Rails.application.routes.draw do
   get "home/edit" => "users#edit", :as => "user"
   patch "home/edit" => "users#update"
 
-  get "home/sendmsg" => "user_has_msg#send2", :as => "sendmsg" 
-  get "home/recvmsg" => "user_has_msg#recv", :as => "recvmsg"
+  get "home/recvmsg/:num" => "user_has_msg#recv", :as => "recvmsg"
+  get "home/sendmsg/:num" => "user_has_msg#send2", :as => "sendmsg"
 
   get "users/:id" => "users#show", :as => "showuser"
   post "users/:id" => "users#add_friend", :as => "addfriend"
   get "chatrooms/enter/:id" => "room_mems#enter", :as => "enterroom"
-  post "chatrooms/enter" => "application#search", :as => "search_id"
+  post "chatrooms/search/:id" => "application#search", :as => "search_id"
+  post "chatrooms/search" => "application#search", :as => "search"
+ 
+
   get "chatrooms/settags/:id" => "tag#set", :as => "set_tag"
   post "chatrooms/enter/:id" => "tag#afterset", :as => "after_set_tag"
- 
-  get "list/:num" => "chatrooms#list", :as => "list_index"
-
-
 
   root 'homepage#index'
   # The priority is based upon order of creation: first created -> highest priority.

@@ -8,7 +8,7 @@
         <p><%= sanitize(chatroom.description) %></p>
         <div class="home-page-roomtag">
           <% chatroom.tags.each do |tag|  %>
-            <span class="label label-info"><%= tag.tagname %> </span>
+            <span class="label label-info"> <%= link_to tag.tagname, search_id_path(tag.tagname), method: :post %></span>
           <% end %>
         </div>
         <span><li class="fa fa-users"></li> <b><%= chatroom.memnum %></b> Members</span>
